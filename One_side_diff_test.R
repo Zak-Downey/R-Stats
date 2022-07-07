@@ -4,7 +4,7 @@ one_sided_diff.test <- function(x,y) {
   # File:       One_side_diff_test.R
   # Version:    V1.0
   # Date:       05.07.22
-  # Function:   Selects onesided T.test with equal or unequal variance or a wilcox test
+  # Function:  Selects one-sided (>), non-paired, T.test with equal or unequal variance or a wilcox test
   #            based on conditions below:
   #            
   #          	- CLT (are there 30 samples?)
@@ -13,7 +13,6 @@ one_sided_diff.test <- function(x,y) {
   
   # Author:     Zak Downey
   #___________________________________________________________________________________
-  
   
   
   # check samples sizes (CLT 30)
@@ -110,6 +109,7 @@ knockout <- c(589, 232, 983, 2597, 827, 1363, 634, 12, 643, 1889, 2840,
 one_sided_diff.test(wildtype,knockout)
 wilcox.test(wildtype,knockout,alternate="greater",
             paired=FALSE,conf.int=0.95)$p.value
+#___________________________________________________________________________________
 
 
 
