@@ -1,7 +1,7 @@
 one_sided_diff.test <- function(x,y) {
   #___________________________________________________________________________________
   # Program:    one_sided_diff.test
-  # File:       One_side_duiiff_test.R
+  # File:       One_side_diff_test.R
   # Version:    V1.0
   # Date:       05.07.22
   # Function:   Selects onesided T.test with equal or unequal variance or a wilcox test
