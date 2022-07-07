@@ -101,3 +101,16 @@ test4<-rnorm(30,2,3)
 one_sided_diff.test(test3,test4)
 t.test(test3,test4,alternative ="greater",paired=FALSE,var.equal=TRUE)$p.value
 
+# 3. non normally distributed data
+wildtype <- c(560, 968, 3297, 1200, 858, 646, 992, 2507, 2037, 546, 2929,
+              1171, 1389, 1958, 3149, 1165, 2257, 2120, 65, 1571)
+knockout <- c(589, 232, 983, 2597, 827, 1363, 634, 12, 643, 1889, 2840,
+              1291, 939, 811, 3290, 525, 90, 543, 2400, 3012) 
+
+one_sided_diff.test(wildtype,knockout)
+wilcox.test(wildtype,knockout,alternate="greater",
+            paired=FALSE,conf.int=0.95)$p.value
+
+
+
+
