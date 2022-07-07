@@ -89,10 +89,15 @@ one_sided_diff.test <- function(x,y) {
 #___________________________________________________________________________________
 #Validation 
 
-# normally distributed data <10 values 
+# 1.  normally distributed data <10 values 
 test1<-rnorm(9,2,3)
 test2<-rnorm(6,2,3)
 one_sided_diff.test(test1,test2)
 wilcox.test(test1,test2,alternate="greater",paired=FALSE,conf.int=0.95)$p.value
 
+# 2. normally distributed data >10 values
+test3<-rnorm(11,2,3)
+test4<-rnorm(30,2,3)
+one_sided_diff.test(test3,test4)
+t.test(test3,test4,alternative ="greater",paired=FALSE,var.equal=TRUE)$p.value
 
